@@ -4,10 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <button id="btn"> Click me !! </button>
+    <form action="">
+        <label for="">Title:</label>
+        <br>
+        <input name="submitted-name" type="text">
+        <br>
+        <label for="">Author:</label>
+        <br>
+        <input name="submitted-name" type="text">
+        <br> 
+        <label for="">Pages:</label>
+        <br>
+        <input name="submitted-name" type="text">
+        <br>
+         <label for="">Read:</label>
+         <br>
+        <input name="submitted-name" type="text">
+        <br>
+    </form>
+
+    <button id="add-btn">Click me to add a new book to the shelf!!</button>
+    <button id="btn"> Click me to add to Library !! </button>
+
+    <br>
+    <br>
+<table id="shelf">
+    <tr>
+        <th id="bookTitle">Title</th>
+        <th id="bookAuthor">Author</th>
+        <th id="bookPages">Pages</th>
+        <th id="bookStatus">Status</th>
+    </tr>
+    <tr>
+        <td>The Hobbit</td>
+        <td>My man Tolkien</td>
+        <td>A lot</td>
+        <td>Not really</td>
+    </tr>
+    <tr>
+        <td>IT</td>
+        <td>Some angry old dude</td>
+        <td>1100 ish</td>
+        <td>Yea</td>
+    </tr>
+</table>
     
 <script src="scripts.js"></script>
 </body>
