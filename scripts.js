@@ -10,6 +10,12 @@ let bookStatus = document.getElementById("bookStatus");
 
 let shelf = document.getElementById("shelf");
 
+let subForm = document.getElementById("subForm");
+let inputTitle = document.getElementById("inputTitle");
+let inputAuthor = document.getElementById("inputAuthor");
+let inputPages = document.getElementById("inputPages");
+let inputStatus = document.getElementById("inputStatus");
+
 let addShelf = function(books){
     for(book of books){
 
@@ -37,22 +43,20 @@ let addBook = function(title, author, pages, read){
     bookshelf.push(newBook);
 };
 
-let newBook = function(){
-    let title = prompt("Type the title");
-    let author = prompt("author");
-    let pages = prompt("pages");
-    let read =  prompt("read it?");
+let newBook = function(event){
+    let title = inputTitle.value;
+    let author = inputAuthor.value;
+    let pages = inputPages.value;
+    let read =  inputStatus.value;
     bookshelf.push(addBook(title, author, pages, read));
+    subForm.reset();
+    event.preventDefault();
 }
 
-addBook('Learning Programming', 'DonProgrammer', '420', 'Read');
-addBook('Doing Dr0gs', 'Albert Einstein', '359', 'Read');
-addBook('ROFLCOPTER', 'E. FTW', '69', 'Read');
+// addBook('Learning Programming', 'DonProgrammer', '420', 'Read');
+// addBook('Doing Dr0gs', 'Albert Einstein', '359', 'Read');
+// addBook('ROFLCOPTER', 'E. FTW', '69', 'Read');
 
-
-button.addEventListener("click", (e) => addShelf(bookshelf));
-addBtn.addEventListener("click", (e) => newBook());
-// submit.addEventListener('click', addShelf(bookshelf));
 
 function createBook(title, author, pages, read){
     if (!new.target) {
@@ -65,5 +69,7 @@ function createBook(title, author, pages, read){
     this.read = read,
     this.id = crypto.randomUUID();
     this.info = () => `The Title is ${newBook.title}, written by ${newBook.author}, the number of pages is ${newBook.pages}, and the status is ${newBook.read}`;
-}
+};
 
+button.addEventListener("click", (e) => addShelf(bookshelf));
+addBtn.addEventListener("click", newBook);
